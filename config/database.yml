@@ -82,4 +82,5 @@ production:
   <<: *default
   database: pgapp_production
   username: pgapp
+  host: db
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
