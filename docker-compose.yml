@@ -6,6 +6,8 @@ services:
       - "5432:5432"
 
   web:
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     build: .
     command: bin/rails server --port 3000 --binding 0.0.0.0
     ports:
