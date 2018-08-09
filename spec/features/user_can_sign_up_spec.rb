@@ -24,5 +24,14 @@ RSpec.feature 'Registration', type: :feature do
     click_button 'Sign up'
     expect(page).to have_content('Password confirmation doesn\'t match Password')
   end
-
+  scenario 'Cannot register if email is invalid' do
+    visit '/users/sign_up'
+    expect(page).to have_content('Username')
+    fill_in 'user_username', with: 'test'
+    fill_in 'user_email', with: 'test.test.com'
+    fill_in 'user_password', with: 'test123'
+    fill_in 'user_password_confirmation', with: 'test123'
+    click_button 'Sign up'
+    expect(page).to have_content("Sign up 1 error prohibited this user from being saved: Email is invalid")
+  end
   end
