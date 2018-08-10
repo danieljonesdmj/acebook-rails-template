@@ -5,6 +5,7 @@ require 'rails_helper'
 # Specs in this file have access to a helper object that includes
 # the UsersHelper. For example:
 #
+
 def sign_up_new_user
   visit '/users/sign_in'
   click_link 'Sign up'
@@ -14,6 +15,12 @@ def sign_up_new_user
   fill_in 'user_password', with: 'hello1'
   fill_in 'user_password_confirmation', with: 'hello1'
   click_on 'Sign up'
+end
+
+def authorised_user_submit_a_post
+click_link 'New post'
+fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"
+click_button 'Submit'
 end
 
 RSpec.describe UsersHelper, type: :helper do

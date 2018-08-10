@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'helpers/users_helper_spec'
+require 'users_helper.rb'
 describe RegistrationsController do
   before :each do
     request.env['devise.mapping'] = Devise.mappings[:user]
