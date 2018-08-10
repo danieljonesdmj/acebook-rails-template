@@ -27,6 +27,8 @@ deploy:
         on:
           repo: danieljonesdmj/acebook-ruff-criminals
          run:
+           - "rake db:drop"
+           - "rake db:create"
            - "rake db:migrate"
            - restart
            - "rake cleanup"
