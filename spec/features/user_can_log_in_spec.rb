@@ -12,7 +12,7 @@ RSpec.feature 'Sign_in', type: :feature do
     expect(page).to have_content('Log in')
     fill_in 'user_email', with: 'test@test.com'
     fill_in 'user_password', with: 'hello1'
-    click_button "Log in"
+    click_button 'Log in'
     expect(page).to have_content('Signed in successfully. Welcome to Ruffbook, test')
   end
   scenario 'Cannot Login without correct email' do
@@ -23,7 +23,7 @@ RSpec.feature 'Sign_in', type: :feature do
     expect(page).to have_content('Log in')
     fill_in 'user_email', with: 'wrongemail@test.com'
     fill_in 'user_password', with: 'hello1'
-    click_button "Log in"
+    click_button 'Log in'
     expect(page).not_to have_content('Signed in successfully. Welcome to Ruffbook, test')
   end
   scenario 'Cannot Login without correct password' do
@@ -34,7 +34,7 @@ RSpec.feature 'Sign_in', type: :feature do
     expect(page).to have_content('Log in')
     fill_in 'user_email', with: 'test@test.com'
     fill_in 'user_password', with: 'wrongpassword'
-    click_button "Log in"
+    click_button 'Log in'
     expect(page).not_to have_content('Signed in successfully. Welcome to Ruffbook, test')
   end
   scenario 'Redirect to sign_in page if not signed in' do
