@@ -5,7 +5,7 @@ require 'helpers/users_helper_spec'
 
 RSpec.feature 'Comment', type: :feature do
   scenario 'Can submit comments and view them' do
-    sign_up_test
+    sign_up_new_user
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'This is a post'
@@ -15,7 +15,7 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_css('p', text: 'This is a comment')
   end
   scenario 'Can see username on comments' do
-    sign_up_test
+    sign_up_new_user
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'This is a post'

@@ -5,7 +5,7 @@ require 'helpers/users_helper_spec'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and view them' do
-    sign_up_test
+    sign_up_new_user
     click_link 'New post'
     expect(page).to have_content('Message')
     fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"
@@ -15,7 +15,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('test posted less than a minute ago')
   end
   scenario 'Can update posts' do
-    sign_up_test
+    sign_up_new_user
     click_link 'New post'
     expect(page).to have_content('Message')
     fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"
@@ -27,7 +27,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('I have updated my post')
   end
   scenario 'Can delete posts' do
-    sign_up_test
+    sign_up_new_user
     click_link 'New post'
     expect(page).to have_content('Message')
     fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"

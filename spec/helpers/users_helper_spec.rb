@@ -5,7 +5,7 @@ require 'rails_helper'
 # Specs in this file have access to a helper object that includes
 # the UsersHelper. For example:
 #
-def sign_up_test
+def sign_up_new_user
   visit '/users/sign_in'
   click_link 'Sign up'
   email = 'test@test.com'
