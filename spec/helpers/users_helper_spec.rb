@@ -18,9 +18,9 @@ def sign_up_new_user
 end
 
 def authorised_user_submit_a_post
-click_link 'New post'
-fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"
-click_button 'Submit'
+  click_link 'New post'
+  fill_in 'Message', with: "Hello, coppers!\bDid you miss me?"
+  click_button 'Submit'
 end
 
 RSpec.describe UsersHelper, type: :helper do

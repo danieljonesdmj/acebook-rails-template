@@ -12,6 +12,7 @@ RSpec.feature 'Registration', type: :feature do
     fill_in 'user_password_confirmation', with: 'test123'
     click_button 'Sign up'
     expect(page).to have_content('Welcome! You have signed up successfully.')
+
   end
   scenario 'Cannot register if passwords don\'t match' do
     visit '/users/sign_up'
